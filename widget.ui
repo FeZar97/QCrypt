@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>307</width>
-    <height>95</height>
+    <width>306</width>
+    <height>117</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="encButton">
    <property name="geometry">
     <rect>
-     <x>198</x>
+     <x>6</x>
      <y>4</y>
      <width>49</width>
      <height>23</height>
@@ -30,8 +30,8 @@
    <property name="geometry">
     <rect>
      <x>4</x>
-     <y>4</y>
-     <width>191</width>
+     <y>28</y>
+     <width>298</width>
      <height>22</height>
     </rect>
    </property>
@@ -39,7 +39,7 @@
   <widget class="QComboBox" name="rsaLengthCB">
    <property name="geometry">
     <rect>
-     <x>252</x>
+     <x>58</x>
      <y>4</y>
      <width>51</width>
      <height>22</height>
@@ -80,10 +80,23 @@
    <property name="geometry">
     <rect>
      <x>4</x>
-     <y>30</y>
+     <y>52</y>
      <width>298</width>
      <height>61</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="edsButton">
+   <property name="geometry">
+    <rect>
+     <x>112</x>
+     <y>4</y>
+     <width>49</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>EDS</string>
    </property>
   </widget>
  </widget>

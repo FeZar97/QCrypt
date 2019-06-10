@@ -52,3 +52,21 @@ QRSAEncryption::Rsa Widget::getKeyLength(int idx)
             return QRSAEncryption::Rsa::RSA_64;
     }
 }
+
+void Widget::on_edsButton_clicked()
+{
+    inData = (ui->encInText->text()).toUtf8();
+
+    e.generatePairKey(pub, priv, keyLenght);
+
+    QByteArray signedMessage = e.signMessage(inData, priv);
+
+    qDebug() << "signedMessage = " << signedMessage;
+
+    ui->resTB->setText(signedMessage);
+
+    if (e.checkSignMessage(signedMessage, pub)) {
+
+        ui->resTB->setText("EDS is valid");
+    }
+}

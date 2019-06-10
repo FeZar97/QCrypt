@@ -26,6 +26,8 @@ private slots:
 
     void on_rsaLengthCB_currentIndexChanged(int index);
 
+    void on_edsButton_clicked();
+
 private:
     Ui::Widget *ui;
 
