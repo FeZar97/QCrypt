@@ -6,7 +6,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = testQSec
+TARGET = QCrypt
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -22,15 +22,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
-SOURCES += \
-        main.cpp \
-        widget.cpp
+SOURCES +=  main.cpp \
+            widget.cpp
 
-HEADERS += \
-        widget.h
+HEADERS +=  widget.h
 
-FORMS += \
-        widget.ui
+FORMS +=  widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

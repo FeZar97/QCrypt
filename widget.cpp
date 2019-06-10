@@ -61,12 +61,7 @@ void Widget::on_edsButton_clicked()
 
     QByteArray signedMessage = e.signMessage(inData, priv);
 
-    qDebug() << "signedMessage = " << signedMessage;
-
-    ui->resTB->setText(signedMessage);
-
     if (e.checkSignMessage(signedMessage, pub)) {
-
         ui->resTB->setText("EDS is valid");
     }
 }
