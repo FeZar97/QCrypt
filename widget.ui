@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
-    <height>68</height>
+    <width>307</width>
+    <height>95</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>198</x>
-     <y>8</y>
-     <width>75</width>
+     <y>4</y>
+     <width>49</width>
      <height>23</height>
     </rect>
    </property>
@@ -30,59 +30,60 @@
    <property name="geometry">
     <rect>
      <x>4</x>
-     <y>8</y>
+     <y>4</y>
      <width>191</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="encOutText">
+  <widget class="QComboBox" name="rsaLengthCB">
    <property name="geometry">
     <rect>
-     <x>278</x>
-     <y>8</y>
-     <width>191</width>
+     <x>252</x>
+     <y>4</y>
+     <width>51</width>
      <height>22</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>64</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>128</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>256</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>512</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1024</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2048</string>
+    </property>
+   </item>
   </widget>
-  <widget class="QLineEdit" name="decOutText">
-   <property name="geometry">
-    <rect>
-     <x>278</x>
-     <y>40</y>
-     <width>191</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="decButton">
-   <property name="geometry">
-    <rect>
-     <x>198</x>
-     <y>40</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>decode</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="decInText">
+  <widget class="QTextBrowser" name="resTB">
    <property name="geometry">
     <rect>
      <x>4</x>
-     <y>40</y>
-     <width>191</width>
-     <height>22</height>
+     <y>30</y>
+     <width>298</width>
+     <height>61</height>
     </rect>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
  </widget>
