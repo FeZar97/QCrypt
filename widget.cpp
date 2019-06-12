@@ -18,18 +18,18 @@ void Widget::on_encButton_clicked()
     inData = (ui->encInText->text()).toUtf8();
 
     auto timeBegin = std::chrono::high_resolution_clock::now();
-    e.generatePairKey(pub, priv, keyLenght);
+    QRSAEncryption::generatePairKey(pub, priv, keyLenght);
     auto timeGeneratePair = std::chrono::high_resolution_clock::now();
 
-    encData = e.encode(inData, pub);
+    encData = QRSAEncryption::encode(inData, pub, keyLenght);
     auto timeEncode = std::chrono::high_resolution_clock::now();
 
-    decData = e.decode(encData, priv);
+    decData = QRSAEncryption::decode(encData, priv, keyLenght);
     auto timeDecode = std::chrono::high_resolution_clock::now();
 
-    ui->resTB->setText(QString("Time to generate RSA keys: %1 ns\n"
-                               "Time to encode: %2 ns\n"
-                               "Time to decode: %3 ns\n")
+    ui->resTB->setText(QString("Time to generate RSA keys: %0 ns\n"
+                               "Time to encode: %1 ns\n"
+                               "Time to decode: %2 ns\n")
                                .arg(std::chrono::duration_cast<std::chrono::nanoseconds>(timeGeneratePair - timeBegin).count())
                                .arg(std::chrono::duration_cast<std::chrono::nanoseconds>(timeEncode - timeGeneratePair).count())
                                .arg(std::chrono::duration_cast<std::chrono::nanoseconds>(timeDecode - timeEncode).count()));
@@ -57,11 +57,11 @@ void Widget::on_edsButton_clicked()
 {
     inData = (ui->encInText->text()).toUtf8();
 
-    e.generatePairKey(pub, priv, keyLenght);
+    QRSAEncryption::generatePairKey(pub, priv, keyLenght);
 
-    QByteArray signedMessage = e.signMessage(inData, priv);
+    QByteArray signedMessage = QRSAEncryption::signMessage(inData, priv, keyLenght);
 
-    if (e.checkSignMessage(signedMessage, pub)) {
+    if (QRSAEncryption::checkSignMessage(signedMessage, pub, keyLenght)) {
         ui->resTB->setText("EDS is valid");
     }
 }

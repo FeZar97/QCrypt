@@ -34,7 +34,6 @@ private:
     QRSAEncryption::Rsa keyLenght;
 
     QByteArray pub, priv;
-    QRSAEncryption e;
 
     QByteArray inData;
     QByteArray encData;
