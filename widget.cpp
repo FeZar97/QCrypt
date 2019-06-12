@@ -18,13 +18,13 @@ void Widget::on_encButton_clicked()
     inData = (ui->encInText->text()).toUtf8();
 
     auto timeBegin = std::chrono::high_resolution_clock::now();
-    QRSAEncryption::generatePairKey(pub, priv, keyLenght);
+    QRSAEncryption::generatePairKeyS(pub, priv, keyLenght);
     auto timeGeneratePair = std::chrono::high_resolution_clock::now();
 
-    encData = QRSAEncryption::encode(inData, pub, keyLenght);
+    encData = QRSAEncryption::encodeS(inData, pub, keyLenght);
     auto timeEncode = std::chrono::high_resolution_clock::now();
 
-    decData = QRSAEncryption::decode(encData, priv, keyLenght);
+    decData = QRSAEncryption::decodeS(encData, priv, keyLenght);
     auto timeDecode = std::chrono::high_resolution_clock::now();
 
     ui->resTB->setText(QString("Time to generate RSA keys: %0 ns\n"
@@ -57,11 +57,11 @@ void Widget::on_edsButton_clicked()
 {
     inData = (ui->encInText->text()).toUtf8();
 
-    QRSAEncryption::generatePairKey(pub, priv, keyLenght);
+    QRSAEncryption::generatePairKeyS(pub, priv, keyLenght);
 
-    QByteArray signedMessage = QRSAEncryption::signMessage(inData, priv, keyLenght);
+    QByteArray signedMessage = QRSAEncryption::signMessageS(inData, priv, keyLenght);
 
-    if (QRSAEncryption::checkSignMessage(signedMessage, pub, keyLenght)) {
+    if (QRSAEncryption::checkSignMessageS(signedMessage, pub, keyLenght)) {
         ui->resTB->setText("EDS is valid");
     }
 }
